@@ -1,0 +1,97 @@
+
+<html>
+<head lang="en">
+    <link rel="icon" href="images/logo.png" size="16x16">
+    <meta charset="UTF-8">
+    <title>启动性能对比测试</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<!--<body onload="hideAllSubs()">-->
+<body>
+<div id="banner" ><div id="title" onclick="location.href='index.html'" >浏览器启动性能横向对比测试</div></div>
+<div id="main"><h1>请选择链接查看结果：</h1>
+    <!--<div id="note_span">注：测试结果链接按 "<span style="color: #003D79; text-decoration: underline">测试日期-启动页面</span>" 命名。</div>-->
+    <div class="machine_list">
+        <div class="machine_name">笔记本测试机-基准</div>
+        <div class="sub">
+            <!--<span class=show_config onmouseover="this.className='hover_show_config'" onmouseout="this.className='show_config'"id="show00" onclick="showSub('laptop-base32', this);">> 查看详细配置</span>-->
+            <a class="show_config" id="show00" onclick="showSub('laptop-base32', this);">> 查看详细配置</a>
+            <div id="laptop-base32" class="config">处理器：Intel Core i3-4030U @ 1.90GHz<br>内存：DDR3 4GB<br>固态硬盘：无<br>操作系统：Win7旗舰版 32bit</div></div>
+        <ul>
+            <li>
+                <a class="latest" href="20141211.html">20141211-M38测试结果</a>
+            </li>
+            <li>
+                <a class="page_link" href="20141203.html">20141203-M38测试结果</a>
+            </li>
+
+        </ul>
+    </div>
+    <div></div>
+    <div class="machine_list">
+        <div class="machine_name">笔记本测试机-基准64bit</div>
+        <div class="sub">
+            <a class="show_config" id="show0" onclick="showSub('laptop-base', this);">> 查看详细配置</a>
+            <div id="laptop-base" class="config">处理器：Intel Core i3-4030U @ 1.90GHz<br>内存：DDR3 4GB<br>固态硬盘：无<br>操作系统：Win7专业版 64bit</div></div>
+        <ul>
+            <li>
+                <a class="page_link" href="20141126-标配笔记本（默认页）.html">20141126-默认页</a>
+            </li>
+            <li>
+                <a class="page_link" href="20141126-标配笔记本（百度）.html">20141126-百度</a>
+            </li>
+            <li>
+                <a class="page_link" href="20141127-标配笔记本（空白页）.html">20141126-空白页</a>
+            </li>
+        </ul>
+    </div>
+    <div class="machine_list">
+        <div class="machine_name">笔记本测试机-低配</div>
+        <div class="sub">
+            <a class="show_config" id="show1" onclick="showSub('laptop', this);">> 查看详细配置</a>
+            <div id="laptop" class="config">处理器：Intel Core i3 M 330 @ 2.13GHz<br>内存：DDR3 2GB<br>固态硬盘：无<br>操作系统：Win7旗舰版 32bit</div></div>
+        <ul>
+            <li>
+                <a class="page_link" href="20141023-低配笔记本（默认页）.html">20141023-默认页</a>
+            </li>
+        </ul>
+    </div>
+    <div class="machine_list">
+        <div class="machine_name">testb2测试机</div>
+        <div class="sub">
+            <a class="show_config" id="show2" onclick="showSub('testb2', this);">> 查看详细配置</a>
+            <div id="testb2" class="config">处理器：Intel Core i5-3470 @3.20GHz<br>内存：DDR3 8GB<br>固态硬盘：无<br>操作系统：Win7专业版 64bit</div></div>
+        <ul>
+            <li>
+                <a class="page_link" href="20141022-Testb2（默认页）.html">20141022 默认页</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    function hideSub(id){
+        var temp = document.getElementById(id);
+        temp.style.display = "none";
+    }
+    function showSub(id, link){
+        var temp = document.getElementById(id);
+        if(temp.style.display!="block"){
+            temp.style.display = "block";
+
+            document.getElementById(link.id).innerHTML = "> 收起详细配置";
+        }
+        else {
+            temp.style.display = "none";
+            document.getElementById(link.id).innerHTML = "> 查看详细配置";
+        }
+    }
+    function hideAllSubs(){
+        var subList = document.getElementsByClassName("config");
+        for (var i=0;i<subList.length;i++){
+            subList[i].style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
