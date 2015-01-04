@@ -119,7 +119,7 @@ def generate_head(utitle):
     <link rel="icon" href="../images/logo.png"><link rel="stylesheet" href="../style.css"><meta charset="UTF-8">\
     <script src="../js/resultPage.js"></script></head>\
     <body onload="switchPanel(\'tag_1\'); drawCharts();">\
-    <div id="banner" ><div id="title_container"><span id="title" onclick="location.href=\'index.html\'" >浏览器启动性能横向对比测试</span></div></div>\
+    <div id="banner" ><div id="title_container"><span id="title" onclick="location.href=\'../index.html\'" >浏览器启动性能横向对比测试</span></div></div>\
     <div id="main"><div id="back" ><a class="page_link" href="../index.html"><<返回首页</a></div>\
     <div id="versions1" style="display:none"><span id="versions_box_corner"></span>\
     <span style="font-weight:bolder">详细版本号:</span>\
