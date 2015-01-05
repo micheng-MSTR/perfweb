@@ -92,8 +92,10 @@
     }
 
     function getResult(id){
-        console.log()
-        location.href = "http://localhost:8080/cgi-bin/get_result.py?date=" + id
+        var host = location.host
+        console.log(host)
+//        location.href = host + "/cgi-bin/get_result.py?date=" + id
+        location.href = "http://" + host + "/cgi-bin/get_result.py?date=" + id
     }
 </script>
 </body>
