@@ -171,7 +171,6 @@ div .browser_span{
 
 
 table{
-
     border: 1px solid;
     border-color: #003D79;
     border-collapse: collapse;
@@ -189,6 +188,15 @@ table th {
     border-style: solid;
     background-color: #D2E9FF;
     width:100px;
+}
+
+.old_lab {
+    background-color: #DDD;
+    color: #666;
+}
+
+.old_value {
+    color: #666;
 }
 
 td{
@@ -244,16 +252,17 @@ a.show_config:hover{
 
 li{
     margin: 10 0;
-    list-style: circle;
+    list-style: none;
 }
 
 #base_machine  li{
     float: left;
-    width: 33%;
+    width: 31%;
     margin: 0;
-    padding: 5px 0;
+    padding: 0;
     /*border-left: 1px solid;*/
     padding-left: 2px;
+    height: 32px;
 }
 
 #back{

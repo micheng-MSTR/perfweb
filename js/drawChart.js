@@ -55,6 +55,51 @@ function drawCharts(){
     console.log("Charts generated successfully.")
 
 }
+
+function drawLines(){
+    var blocks = document.getElementsByClassName("data_block");
+
+    for(var i = 0; i<blocks.length; i++){
+        var datalist = getData("chartData"+ i.toString());
+        var maxValue = Math.max.apply(null, datalist);
+        var stepWidth = Math.ceil(maxValue/4);
+
+        var steps = Math.ceil(maxValue/stepWidth);
+
+        if(steps*stepWidth-maxValue<=stepWidth*0.25&&steps>1)
+            steps += 1;
+        //console.log(stepWidth+' * '+steps);
+        var labellist = getData("chartLabel"+ i.toString());
+        var lineData = {
+            labels : labellist,
+            datasets : [
+                {
+                    label: "My First dataset",
+//                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor : "rgba(80,140,205,0.8)",
+                    pointColor : "rgba(80,140,205,0.8)",
+                    pointStrokeColor : "#fff",
+                    pointHighlightFill : "#fff",
+                    pointHighlightStroke : "rgba(220,220,220,1)",
+                    data : datalist
+                }
+            ]
+        }
+        var ctx = document.getElementById("canvas"+ i.toString()).getContext("2d");
+        window.myBar = new Chart(ctx).Line(lineData, {
+//            responsive : true,
+            bezierCurve : false,
+            datasetFill: false,
+            scaleShowGridLines : false,
+            scaleOverride : true,
+            scaleSteps : steps,
+            scaleStepWidth : stepWidth
+        });
+    }
+    console.log("Charts generated successfully.")
+
+}
+
 //window.onload = function(){
 //    hideTooltip();
 //    drawCharts();

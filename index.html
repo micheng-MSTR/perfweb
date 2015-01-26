@@ -19,16 +19,26 @@
             <a class="show_config" id="show00" onclick="showSub('laptop-base32', this);" style="margin-left: 20px">> 查看详细配置</a>
             <div id="laptop-base32" class="config" style="margin-left: 30px">处理器：Intel Core i3-4030U @ 1.90GHz<br>内存：DDR3 4GB<br>固态硬盘：无<br>操作系统：Win7旗舰版 32bit</div></div>
         <ul>
-            <li><a class="latest page_link" id="20150105" onclick="getResult(this.id)">20150105 Release自动测试结果</a></li>
-			<li><a class="page_link" id="20150104" onclick="getResult(this.id)">20150104 Release自动测试结果</a></li>
-			<li><a class="page_link" id="20141231" onclick="getResult(this.id)">20141231 Release自动测试结果</a></li>
-			<li><a class="page_link" id="20141230" onclick="getResult(this.id)">20141230 Release自动测试结果</a></li>
-			<li><a class="page_link" id="20141226" onclick="getResult(this.id)">20141226 Release自动测试结果</a></li>
-			<li><a class="page_link" id="20141225" onclick="getResult(this.id)">20141225 Release自动测试结果</a></li>
-            <li><a class="page_link" id="20141224" onclick="getResult(this.id)">20141224 Release自动测试结果</a></li>
-            <li><a class="page_link" id="20141218" onclick="getResult(this.id)">20141218 横向对比测试结果</a></li>
-            <li><a class="page_link" id="20141211" onclick="getResult(this.id)">20141211 M38测试结果</a></li>
-            <li><a class="page_link" id="20141203" onclick="getResult(this.id)">20141203 M38测试结果</a></li>
+			<li><a class="latest page_link" id="20150121" onclick="getResult(this.id, 'regular')">20150121 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150120" onclick="getResult(this.id, 'regular')">20150120 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150115" onclick="getResult(this.id, 'regular')">20150115 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150114" onclick="getResult(this.id, 'regular')">20150114 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150113" onclick="getResult(this.id, 'regular')">20150113 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150112" onclick="getResult(this.id, 'regular')">20150112 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150109" onclick="getResult(this.id, 'regular')">20150109 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150108" onclick="getResult(this.id, 'regular')">20150108 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150107" onclick="getResult(this.id, 'regular')">20150107 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150106" onclick="getResult(this.id, 'regular')">20150106 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150105" onclick="getResult(this.id, 'regular')">20150105 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20150104" onclick="getResult(this.id, 'regular')">20150104 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20141231" onclick="getResult(this.id, 'regular')">20141231 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20141230" onclick="getResult(this.id, 'regular')">20141230 Release自动测试结果</a></li>
+			<li><a class="page_link" id="20141226" onclick="getResult(this.id, 'regular')">20141226 Release自动测试结果</a></li>
+            <li><a class="page_link" id="20141225" onclick="getResult(this.id, 'regular')">20141225 Release自动测试结果</a></li>
+            <li><a class="page_link" id="20141224" onclick="getResult(this.id, 'regular')">20141224 Release自动测试结果</a></li>
+            <li><a class="page_link" id="20141218" onclick="getResult(this.id, 'comparison')">20141218 横向对比测试结果</a></li>
+            <li><a class="page_link" id="20141211" onclick="getResult(this.id, 'comparison')">20141211 M38测试结果</a></li>
+            <li><a class="page_link" id="20141203" onclick="getResult(this.id, 'comparison')">20141203 M38测试结果</a></li>
 
         </ul>
     </div>
@@ -40,7 +50,7 @@
                 <div id="laptop-base" class="config">处理器：Intel Core i3-4030U @ 1.90GHz<br>内存：DDR3 4GB<br>固态硬盘：无<br>操作系统：Win7专业版 64bit</div></div>
             <ul>
                 <li>
-                    <a class="page_link" id="20141126" onclick="getResult(this.id)">20141126 M38测试结果</a>
+                    <a class="page_link" id="20141126" onclick="getResult(this.id, 'comparison')">20141126 M38测试结果</a>
                 </li>
             </ul>
         </div>
@@ -92,11 +102,10 @@
         }
     }
 
-    function getResult(id){
-        var host = location.host
-        console.log(host)
+    function getResult(id, mode){
+        var host = location.host;
 //        location.href = host + "/cgi-bin/get_result.py?date=" + id
-        location.href = "http://" + host + "/cgi-bin/get_result.py?date=" + id
+        location.href = "http://" + host + "/cgi-bin/get_result.py?date=" + id + "&tb=" + mode;
     }
 </script>
 </body>
