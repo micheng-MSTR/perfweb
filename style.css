@@ -47,7 +47,7 @@ body {
 #base_machine{
     float:left;
     width: 980px;
-    height: 560px;
+    min-height: 560px;
     /*background-color: #EFF8FE;*/
     background-color: #D2E9FF;
 }
@@ -408,5 +408,6 @@ ul, li{
 
     color: #842B00;
     background: -webkit-gradient(linear, 0 0, 100% 0, from(#FFF3EE), to(#FFE6D9));
+    background: -ms-linear-gradient(left, #FFF3EE, #FFE6D9);
     box-shadow: 2px 2px 5px #CCCCCC;
 }
