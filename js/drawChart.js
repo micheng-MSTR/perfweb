@@ -62,12 +62,23 @@ function drawLines(){
     for(var i = 0; i<blocks.length; i++){
         var datalist = getData("chartData"+ i.toString());
         var maxValue = Math.max.apply(null, datalist);
-        var stepWidth = Math.ceil(maxValue/4);
+        var minValue = Math.min.apply(null, datalist);
+        var diff =  Math.ceil(maxValue) - Math.floor(minValue);
 
-        var steps = Math.ceil(maxValue/stepWidth);
+        var stepWidth = diff/2;
 
-        if(steps*stepWidth-maxValue<=stepWidth*0.25&&steps>1)
+        var steps = diff/stepWidth;
+        var startvalue = Math.floor(minValue);
+
+        var totop = steps*stepWidth+startvalue - maxValue;
+        var tobottom = minValue - startvalue;
+
+
+        if(totop<=stepWidth*steps*0.25&&steps>1 ||  steps == 1&&maxValue-Math.floor(minValue)>=1)
             steps += 1;
+        if(tobottom <= stepWidth*0.25) {
+            startvalue -= stepWidth;
+        }
         //console.log(stepWidth+' * '+steps);
         var labellist = getData("chartLabel"+ i.toString());
         var lineData = {
@@ -93,7 +104,8 @@ function drawLines(){
             scaleShowGridLines : false,
             scaleOverride : true,
             scaleSteps : steps,
-            scaleStepWidth : stepWidth
+            scaleStepWidth : stepWidth,
+            scaleStartValue: startvalue
         });
     }
     console.log("Charts generated successfully.")
