@@ -32,7 +32,7 @@ function switchPanel(tagId){
         }
 
         else{
-            content[i].style.display='block'
+            content[i].style.display='table'
             nav_tag.className='selected'
 
         }
